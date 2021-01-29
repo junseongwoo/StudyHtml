@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Selector Basic</title>
+
+    <style>
+        #header {
+            width: 800px;
+            height: 300px;
+            margin: 0 auto;
+            background: red;
+        }
+
+        #wrap {
+            width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #aside {
+            width: 300px;
+            float: left;
+            background-color: skyblue;
+        }
+
+        #content {
+            width: 500px;
+            float: right;
+            background: green;
+        }
+
+        #footer {
+            width: 800px;
+            margin: 0 auto;
+            background: yellow;
+        }
+
+        .fruits {
+            color: snow;
+            font-family: bold;
+        }
+
+        .item {
+            color: wheat;
+        }
+
+        .footer {
+            background-color: silver;
+        }
+
+        input[type="text"] {background: red;}
+        input[type="password"] {background: blue;}
+        input[type1="text"] {background: black;}
+        input[type1="password"] {background: khaki;}
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>#header 태그</h1>
+    </div>
+
+    <div id="wrap">
+        <div id="aside">
+            <h1>#aside 태그</h1>
+            <ul>
+                <li class="fruits"><a href="http://naver.com">사과</a></li>
+                <li><a href="http://youtube.com">배</a></li>
+                <li><a href="http://github.com">딸기</a></li>
+                <li class="fruits"><a href="http://google.com">바나나</a></li>
+            </ul>
+
+        </div>
+
+
+        <div id="content">
+            <h1>#content 태그</h1>
+            <form>
+                <input type="text">
+                <input type="password">
+            </form>
+        </div>
+        <form>
+            <input type1="text">
+            <input type1="password">
+        </form>
+    </div>
+
+    <div id="footer">
+        <h1 class="item footer">#footer 태그</h1>
+    </div>
+</body>
+
+</html>
