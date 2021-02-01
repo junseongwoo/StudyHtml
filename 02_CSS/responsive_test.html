@@ -1,17 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Document</title>
-
+    <title>Responsive Web Basic</title>
     <style>
-        @media screen {
+        /* 모바일
+        @media (max-width: 499px) {
+            body { background: red; }
+        }
+
+        테블릿 
+        @media (min-width: 500px) and (max-width: 799px) {
+            body { background: green; }
+        }
+
+         일반웹 
+        @media (min-width: 800px) {
+            body { background: blue; }
+        }  */
+
+        @media screen and (orientation: portrait) {
             body {
-                background-color:red;
+                background-color: red;
             }
         }
-        @media print {
+
+        @media screen and (orientation: landscape) {
             body {
                 background-color: green;
             }
@@ -19,7 +32,7 @@
     </style>
 </head>
 <body>
-    <h1>lorem good</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt saepe, dolore porro nobis quia dolores voluptatum, esse accusamus inventore eum culpa, dolorum quibusdam officia sunt sapiente. Ut accusantium voluptates illum.</p>
+    <h1>Lorem ipsum dolor sit amet</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus hendrerit nunc at consectetur. In hac habitasse platea dictumst. Ut a luctus neque, et tempor erat. Aliquam quis arcu id lectus fringilla volutpat id tempor lorem. Duis vitae odio vehicula dui vulputate mollis et sit amet mauris. Nulla facilisi. Praesent non sapien ac sapien malesuada ornare eget at libero. Aenean et faucibus arcu, id maximus mi. Curabitur tincidunt mi vitae orci porttitor, quis laoreet justo iaculis.</p>
 </body>
 </html>
