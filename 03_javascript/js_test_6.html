@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>	
+	<head>
+		<title>Clock</title>
+		<script>
+			// 로드 이벤트 연결 
+			window.onload = function () {
+				// 변수를 선언합니다.
+				var clock = document.getElementById('clock');  // id clock 객체 가져오기
+
+				
+				setInterval(function () {
+					var now = new Date();
+					clock.innerHTML = now.toString(); // clock 객체 html에 3초 전 시간을 가져옴
+
+				}, 3000);
+			};
+		</script>
+	</head>
+	<body>
+		<h1 id="clock"></h1>
+	</body>
+</html>

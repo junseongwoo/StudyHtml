@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload = function () { // 페이지 로드 되었을때 처리하는 이벤트 // 제일 많이씀 
+            var header = document.getElementById("header");
+            console.log(header.innerText);
+
+            header.style.backgroundColor = "red";
+            header.style.color = "black";
+            header.innerText = "Hello, World!";
+
+        }
+        
+        function changeColor(newcolor){
+            var header = document.getElementById("header");
+            header.style.color = newcolor;
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="header">Header</h1>
+    <input type="button" value="change" onclick="changeColor('green');">
+</body>
+
+</html>
