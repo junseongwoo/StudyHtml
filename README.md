@@ -10,13 +10,14 @@ HTML 기본 학습
 
 ### HTML 기본학습
 
-[HTML 소스](https://github.com/junseongwoo/StudyHtml/tree/main/01HTML)
+[HTML 소스](https://github.com/junseongwoo/StudyHtml/tree/main/01_HTML)
 
 
 --------------
 
 ## CSS3
 CSS 기본 학습 
+[CSS 소스](https://github.com/junseongwoo/StudyHtml/tree/main/02_CSS)
 
 -------------
 
