@@ -1,0 +1,162 @@
+<!-- 목표 : 핀터레스트 레이아웃으로 책 소개 만들기 
+1. 기본 핀터레스트는 책만 나오게 하고
+2. 눌렀을때 이미지가 반만 나오게 한 후 프리뷰 링크와 함께 책 소개 들어가기 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Interest</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+
+    <link rel="stylesheet" href="css/init_2.css">
+    <link rel="stylesheet" href="css/form_2.css">
+    <link rel="stylesheet" href="css/designes_2.css">
+
+    <!-- 자바 스크립트 -->
+    <script>
+        // 로드 이벤트
+       
+        $(document).ready(function() {
+             // 풀다운 메뉴
+            $(".outer-menu").hover(function () {
+                $(this).find(".inner-menu").css("display", "block"); //this를 안쓰면 모든 inner-menu가 나오게 됌 
+            }, function () {
+                $(this).find(".inner-menu").css("display", "none");
+            });
+
+            // 그리드 레이아웃 적용, 이미지 자동로드 적용
+            $("#main-section").imagesLoaded(function(){ 
+                $("#main-section").masonry({
+                    itemSelector: ".paper",
+                    columnWidth: 230,
+                    isAnimated: true
+                });
+            });
+            
+            // 라이트 박스
+            $(".paper").click(function() { 
+                showLightBox(); 
+            });
+
+            $("#darken-background").click(function(){
+                hideLightBox();
+            });
+
+            // 라이트박스 이벤트 서포트 // 하얀 영역을 클릭해서 라이트박스가 꺼지는 것을 방지
+            $("#lightbox").click(function (event) {
+                event.stopPropagation()
+            });
+
+        });
+    
+        // 그리드
+        function showLightBox() {
+            $("#random-image").attr({  // 라이트 박스를 클릭 했을 때 랜덤으로 이미지가 뜨게함 
+                src: function(){       // 원래 이미지에서 random 으로 바뀌는데 시간이 걸림
+                    var rnd_height = Math.floor(Math.random() * 600) + 10;
+                    return "https://placedog.net/500/" + rnd_height;
+                }
+            });
+            $("#darken-background").show();
+            $("#darken-background").css("top", $(window).scrollTop());
+
+            //스크롤을 못하게함 
+            $("body").css("overflow","hidden");
+        }
+
+        function hideLightBox() {
+            $("#darken-background").hide();
+            $("body").css("overflow","auto"); // hidden의 반대를 잘 모르기때문에 auto로 정함
+        }
+
+
+    </script>
+   
+</head>
+
+<body>
+    <header id="main-header"> 
+        <div class="header-search-form">
+            <form> 
+                <input type="search" class="input-search">
+                <input type="submit" class="input-submit" value="검색"> <!--책은 input-search-submit으로 했지만 input-submit으로 클래스 바꿈-->
+            </form>
+        </div>
+        <h1 class="header-title">Interest</h1>
+        <div class="header-menu">
+            <ul class="outer-menu">
+                <li>
+                    <a href="#">정보</a> <!-- #은 일단 넣어둔 것 -->
+                    <ul class="inner-menu">
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="outer-menu">
+                <li>
+                    <a href="#">사용자</a>
+                    <ul class="inner-menu">
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <nav id="main-navigation">
+        <ul>
+            <li><a href="#">Following</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Everything</a></li>
+            <li><a href="#">Popular</a></li>
+            <li><a href="#">Gift</a></li>
+        </ul>
+    </nav>
+
+    <section id="main-section">
+        <!-- 페이퍼 여러번 복사 -->
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placekitten.com/190/328"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="data:image/png;base64,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" width="35px" height="35px">
+                </a> 
+                <p class="paper-text">Lorem ipsum dolor sit amet,</p>
+            </div>
+        </div>
+        <!-- 페이퍼 끝 -->
+    </section>
+
+    <div id="darken-background">
+        <div id="lightbox">
+            <div class="lightbox-splitter">
+            </div>
+            <img id="random-image" src="https://placedog.net/600/600">
+            <div class="book-information">
+                
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, tempora aut? A, suscipit. Perspiciatis vel mollitia totam adipisci? Odio quisquam animi consequatur delectus rem placeat iure officiis dolorem maxime nisi?</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <footer id="main-footer"></footer>
+</body>
+
+</html>
