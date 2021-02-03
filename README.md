@@ -5,7 +5,7 @@
 
 
 ## HTML5
-HTML 기본 학습
+> HTML 기본 학습
 
 [HTML 소스](https://github.com/junseongwoo/StudyHtml/tree/main/01_HTML)
 
@@ -13,25 +13,25 @@ HTML 기본 학습
 --------------
 
 ## CSS3
-CSS 기본 학습 
+> CSS 기본 학습 
 
 [CSS 소스](https://github.com/junseongwoo/StudyHtml/tree/main/02_CSS)
 
 -------------
 
 ## Javascript 기본 학습
-Javascript 기본 학습 
+> Javascript 기본 학습 
 
 -----------------
 
 ## Responsevise Web 
-응답형 웹 기본 학습
+> 응답형 웹 기본 학습
 
 
 ----------------------
 
 ## Project 
-전체 통합 프로젝트
+> 전체 통합 프로젝트
 
 ----
 
