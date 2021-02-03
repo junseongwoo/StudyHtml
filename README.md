@@ -22,17 +22,15 @@
 ## Javascript 기본 학습
 > Javascript 기본 학습 
 
------------------
-
-## Responsevise Web 
-> 응답형 웹 기본 학습
-
-
 ----------------------
 
 ## Project 
 > 전체 통합 프로젝트
 
-----
+#### 반응형 웹 그리드 레이아웃 웹페이지 실습
+ ![결과1](/StudyHtml/blob/main/04_project/images/result01.png)
+ ![결과2](https://github.com/junseongwoo/StudyHtml/blob/main/04_project/images/result02.png)
+
+-----------------
 
 
