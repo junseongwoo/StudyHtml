@@ -29,8 +29,9 @@
 [전체소스](https://github.com/junseongwoo/StudyHtml/tree/main/04_project)
 
 #### 반응형 웹 그리드 레이아웃 웹페이지 실습
- ![결과1](/ref_image/result01.png "전체레이아웃")
- ![결과2](/ref_image/result02.png"팝업 레이아웃")
+ ![결과1](/ref_image/result01.png "전체 레이아웃")
+ <br>
+ ![결과2](/ref_image/result02.png "팝업 레이아웃")
 
 -----------------
 
