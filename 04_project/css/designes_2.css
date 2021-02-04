@@ -19,9 +19,9 @@
 } */
 
 .paper-content {
-    margin : 10px -15px 0 -15px;
+    margin : -10px 0 -10px;
     padding : 10px 10px 10px;
-    background-color: #f2f0f0;
+    background-color: #ff0404;
     overflow: hidden;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .paper-text {
-    float: left;
+    float: right;
     width: 150px;
     margin-left:10px;
 }
