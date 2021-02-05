@@ -1,22 +1,38 @@
 /* 페이퍼 스타일 */
 .paper {
     width: 190px;
-    margin-top: 15px;
-    padding: 0;
+    margin-top: 10px;
+    padding: 15px 15px 0;
     font-size: 12px;
-    background-color: #ffffff;
+    background-color: #6a666675;
     box-shadow:0 1px 3px rgba(34, 25, 25, 0.5);
     border-radius: 10px;
 }
 .paper-holder img {
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 .paper-description { 
     margin : 10px 0;
 }
 
+.paper-content {
+    margin : 5px -15px 0 -15px;
+    padding : 5px 15px 0;
+    background-color: #8b8d97c9;
+    overflow: hidden;
+}
 
+.paper-link {
+    display : block;
+    float:left;
+}
+
+.paper-text {
+    float: left;
+    width: 150px;
+    margin-left:10px;
+}
 
  /* 섹션 스타일 */
 
@@ -24,15 +40,6 @@
     width: 920px;
     margin: 0 auto; /* 중앙으로 가게 만듬 */
 }
-
-/* 라이트박스 크기 조절 */
-@media(max-width:1050px) {
-    /* 라이트 박스 세로로 출력 */
-}
-@media(min-width:1051px) {
-    /* 라이트 박스 가로로 출력 */
-}
-
 
 /* 세줄 */
 @media(max-width: 919px) {
