@@ -41,6 +41,7 @@
     margin: 0 auto; /* 중앙으로 가게 만듬 */
 }
 
+
 /* 세줄 */
 @media(max-width: 919px) {
     #main-section{
@@ -90,7 +91,13 @@
     text-align: center;
 }
 
-.user-information { overflow: hidden; text-align: left; }
-.user-information-image { float: left; width: 70px; }
-.user-information-text { float: right; width: 620; } 
-.lightbox-splitter { margin: 10px 0; }
+
+@media(max-width){
+    
+}
+
+
+.user-information { overflow: hidden; text-align: left; background-color: #7d9184; }
+.user-information-image { float: left; width: 80px; height: 132px; }
+.user-information-text { float: right; width: 620px; } 
+.lightbox-splitter { margin: 15px auto; }
