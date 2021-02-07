@@ -1,7 +1,7 @@
 /* 헤더 */
 #main-header {
     height: 40px;
-    background-color: #faf7f7;
+    background-color: #8f7171;
     position: relative;
 }
 
@@ -64,8 +64,8 @@
 /* 메인 네비게이션 */
 #main-navigation {
     height: 30px;
-    background-color: #faf7f7;
-    border-top: 1px solid #cfcaca;
+    background-color: #93967a;
+    border-top: 1px solid #000000;
     box-shadow: 1px 3px 3px rgba(34, 25, 25, 0.5);
 }
 

@@ -4,7 +4,7 @@
     margin-top: 10px;
     padding: 15px 15px 0;
     font-size: 12px;
-    background-color: #ffffff;
+    background-color: #6a666675;
     box-shadow:0 1px 3px rgba(34, 25, 25, 0.5);
     border-radius: 10px;
 }
@@ -17,9 +17,9 @@
 }
 
 .paper-content {
-    margin : 10px -15px 0 -15px;
-    padding : 15px 15px 0;
-    background-color: #f2f0f0;
+    margin : 5px -15px 0 -15px;
+    padding : 5px 15px 0;
+    background-color: #8b8d97c9;
     overflow: hidden;
 }
 
@@ -32,6 +32,7 @@
     float: left;
     width: 150px;
     margin-left:10px;
+    padding-top : 10px;
 }
 
  /* 섹션 스타일 */
@@ -39,7 +40,9 @@
  #main-section {
     width: 920px;
     margin: 0 auto; /* 중앙으로 가게 만듬 */
+    
 }
+
 
 /* 세줄 */
 @media(max-width: 919px) {
@@ -85,12 +88,19 @@
     margin: 20px auto; padding: 15px;
     border: 1px solid #333333;
     border-radius: 5px;
-    background-color: white; /* #fffff; */
+    background-color: rgb(120, 121, 163); /* #fffff; */
     box-shadow: 0 5px 5px rgba(34, 25, 25, 0.4);
     text-align: center;
 }
 
-.user-information { overflow: hidden; text-align: left; }
-.user-information-image { float: left; width: 70px; }
-.user-information-text { float: right; width: 620; } 
-.lightbox-splitter { margin: 10px 0; }
+
+@media(max-width){
+    
+}
+
+
+.user-information { overflow: hidden; text-align: left; background-color: #7d9184; }
+.user-information-image { float: left; width: 80px; height: 132px; }
+.user-information-text { float: right; width: 600px; 
+                        padding : right;} 
+.lightbox-splitter { margin: 15px auto; }

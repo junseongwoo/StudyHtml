@@ -1,59 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Interest</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/masonry.pkgd.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-
     <link rel="stylesheet" href="css/init.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/designes.css">
 
-    <!-- 자바 스크립트 -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+
+    <!--자바스크립트-->
     <script>
         // 로드 이벤트
-       
-        $(document).ready(function() {
-             // 풀다운 메뉴
+
+        $(document).ready(function () {
+            // 풀다운 메뉴 적용
             $(".outer-menu").hover(function () {
-                $(this).find(".inner-menu").css("display", "block"); //this를 안쓰면 모든 inner-menu가 나오게 됌 
+                $(this).find(".inner-menu").css('display', "block");
             }, function () {
-                $(this).find(".inner-menu").css("display", "none");
+                $(this).find(".inner-menu").css('display', "none");
             });
 
-            // 그리드 레이아웃 적용, 이미지 자동로드 적용
-            $("#main-section").imagesLoaded(function(){ 
+            // 그리드 레이아웃, 이미지 자동로드 적용
+            $("#main-section").imagesLoaded(function () {
                 $("#main-section").masonry({
                     itemSelector: ".paper",
-                    columnWidth: 230,
-                    isAnimated: true
+                    columnWidth: 230
                 });
             });
-            
-        // 라이트박스
-        $(".paper").click(function() { showLightBox(this); });
-        $("#darken-background").click(function() { hideLightBox(); });
-        // 라이트박스이벤트 서포트 // 하얀영역을 클릭해도 라이트박스꺼지는 걸 방지
-        $("#lightbox").click(function (event) {
-            event.stopPropagation();
-        });
+
+            // 라이트박스
+            $(".paper").click(function() { showLightBox(this); });
+            $("#darken-background").click(function() { hideLightBox(); });
+            // 라이트박스이벤트 서포트 // 하얀영역을 클릭해도 라이트박스꺼지는 걸 방지
+            $("#lightbox").click(function (event) {
+               event.stopPropagation();
+            });
         });
 
         // 그리드내 이미지 클릭한것 나오게 하는 함수 변경
         function showLightBox(obj) {
             var img_src = obj.getElementsByTagName("img")[0].src;            
-            $("ramdom-image").attr({
+            $("#dog-image").attr({
                 src: function() {
-                    // var rnd_height = 500 + Math.floor(Math.random() * 100);            // 라이트 박스를 클릭 했을 때 랜덤으로 이미지가 뜨게함 
-                    return img_src; // "https://placekitten.com/600/" + rnd_height;       // 이미지 바꾸는데 시간이 걸림
+                    // var rnd_height = 400 + Math.floor(Math.random() * 100); //라이트 박스를 클릭 했을 때 랜덤하게 출력
+                    return img_src; // "https://placekitten.com/500/" + rnd_height; // 이미지 바꾸는데 시간이 걸림
                 }
             });
-
             $("#darken-background").show();
             $("#darken-background").css("top", $(window).scrollTop());
             $("body").css('overflow', 'hidden');
@@ -63,16 +61,13 @@
             $("#darken-background").hide();
             $("body").css('overflow', 'auto'); // 정확
         }
-
-
     </script>
-   
 </head>
 
 <body>
-    <header id="main-header"> 
+    <header id="main-header">
         <div class="header-search-form">
-            <form> 
+            <form>
                 <input type="search" class="input-search">
                 <input type="submit" class="input-submit" value="검색"> <!--책은 input-search-submit으로 했지만 input-submit으로 클래스 바꿈-->
             </form>
@@ -81,7 +76,7 @@
         <div class="header-menu">
             <ul class="outer-menu">
                 <li>
-                    <a href="#">정보</a> <!-- #은 일단 넣어둔 것 -->
+                    <a href="#">정보</a>
                     <ul class="inner-menu">
                         <li><a href="#">데이터</a></li>
                         <li><a href="#">데이터</a></li>
@@ -105,7 +100,6 @@
             </ul>
         </div>
     </header>
-
     <nav id="main-navigation">
         <ul>
             <li><a href="#">Following</a></li>
@@ -115,281 +109,250 @@
             <li><a href="#">Gift</a></li>
         </ul>
     </nav>
-
     <section id="main-section">
-        <!-- 페이퍼 여러번 복사 -->
+        <!-- 페이퍼 여러번 복사할 것(나중에) -->
         <div class="paper">
             <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/328"></a>
+                <a><img width="190" src="https://placedog.net/190/205"></a>
             </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo laborum possimus a dolorem placeat aut obcaecati, aliquam aliquid culpa impedit nostrum eaque consequatur. Deleniti quam reprehenderit minima dolorum possimus nemo?</p>
-            </div>
-        </div>
-        <div class="paper"> <!-- 2번 -->
-            <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/290"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper"> <!-- 3 -->
-            <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/200"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper"> <!--4-->
-            <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/215"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper">
-            <div class="paper-holder"> <!--5-->
-                <a><img width="190" src="https://placekitten.com/190/256"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper"> <!--6-->
-            <div class="paper-holder"> 
-                <a><img width="190" src="https://placekitten.com/190/249"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper"> <!--7-->
-            <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/186"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper">
-            <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/182"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper">
-            <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/176"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper">
-            <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/316"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper">
-            <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/188"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper">
-            <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/180"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper">
-            <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/324"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper">
-            <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/305"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper">
-            <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/273"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper">
-            <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/326"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper">
-            <div class="paper-holder">
-                <a><img width="190" src="https://placedog.net/540/320"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
             <div class="paper-content">
                 <a class="paper-link" href="#">
                     <img src="https://placedog.net/30/30">
                 </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
+                <p class="paper-text">DOG IS LOVE</p>
             </div>
         </div>
         <div class="paper">
             <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/230"></a>
+                <a><img width="190" src="https://placedog.net/190/299"></a>
             </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper">
-            <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/317"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper">
-            <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/192"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
-            <div class="paper-content">
-                <a class="paper-link" href="#">
-                    <img src="https://placekitten.com/30/30">
-                </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="paper">
-            <div class="paper-holder">
-                <a><img width="190" src="https://placedog.net/122/112"></a>
-            </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
             <div class="paper-content">
                 <a class="paper-link" href="#">
                     <img src="https://placedog.net/30/30">
                 </a>
-                <p class="paper-text">Lorem ipsum dolor sit amet!</p>
+                <p class="paper-text">DOG IS LOVE</p>
             </div>
         </div>
-        <!-- 페이퍼 끝 -->
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/356"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/247"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/196"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/213"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/243"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/286"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/234"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/257"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/400"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/140"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/180"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/221"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/320"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/280"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/245"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/305"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/230"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placedog.net/190/250"></a>
+            </div>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placedog.net/30/30">
+                </a>
+                <p class="paper-text">DOG IS LOVE</p>
+            </div>
+        </div>
+         <!-- 페이퍼 끝 -->
     </section>
-
     <div id="darken-background">
         <div id="lightbox">
             <div class="user-information">
                 <a class="user-information-image" href="#">
-                    <img src="https://placedog.net/70/70" >
+                    <img src="https://placedog.net/70/70" width="80" height="132">
                 </a>
                 <div class="user-information-text">
-                    <h3>User</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum inventore laudantium, beatae optio accusamus architecto sed veniam harum tempora iusto ipsam dolore tenetur voluptate iure perferendis nam esse cum fuga.</p>
+                    <h2>Dog lover</h3>
+                    <p>Dog is love</p>
+                </div>
+                <div class="user-information-text">
+                    <br>
+                    <h3>JunSeong</h3>
                 </div>
             </div>
             <hr class="lightbox-splitter">
-            <img id="ramdom-image" src="">
+            <img id="dog-image" src="" width="400" height="400">
+            <p>강아지 키우고 싶다..</p>
         </div>
     </div>
-
     <footer id="main-footer"></footer>
 </body>
-
 </html>
